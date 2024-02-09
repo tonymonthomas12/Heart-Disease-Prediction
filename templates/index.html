@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<style>
+   body { 
+        
+background: url(../static/Careers-in-the-Medical-Field-You-Should-Pursue.jpg);
+color: white;
+    }
+
+</style>
+    <title>Heart disease Prediction</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-warning" href="#">Heart Disease Prediction</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact us</a>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <!-- <img src="https://source.unsplash.com/1600×900/?drugs,brain" class="d-block w-100" alt="..."> -->
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Heart Disease prediction</h5>
+              <p>In this project our top priority is to predict patient have heart disease or not.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+<!--            <img src="../static/img/image2.jpg" class="d-block w-100" alt="...">-->
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Stroke prediction</h5>
+                <p>In this project our top priority is to predict patient have stroke or not.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/image.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Heart Disease prediction</h5>
+                <p>In this project our top priority is to predict patient have heart disease or not.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="container">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h2 class="fw-normal">Fill this form to predict heart disease.</h2>
+            <p class=" text-muted"><b>Heart disease, also known as cardiovascular disease (CVD), refers to a range of conditions that affect the heart, including coronary artery disease, heart failure, arrhythmias, and congenital heart defects, among others.
+                It is one of the leading causes of death worldwide..</b>
+            </p>
+            <p class="text-danger"><b>{{prediction_text}}</b></p>
+        </div>
+        <div class="container">
+            <form action="/submit" method="POST">
+                  <div class="mb-3">
+                    <label for="exampleInputBMI" class="form-label">Enter Body Mass index</label>
+                    <input type="number" class="form-control" id="bmi" name="bmi" placeholder="Body Mass Index (BMI) ">
+                </div>
+                   <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">Smoking status</label>
+                    <select class="form-select" id="smoking" name="smoking" aria-label="Default select example">
+                        <option selected value="Unknown">-- Select smoking status if unknown --</option>
+                        <option value="">NO</option>
+                        <option value="">YES</option>
+                    </select>
+                </div>
+                 <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">AlcoholDrinking</label>
+                    <select class="form-select" id="drinking" name="drinking" aria-label="Default select example">
+                        <option selected value="Unknown">-- Select alcoholdrinking status if unknown --</option>
+                        <option value="">NO</option>
+                        <option value="">YES</option>
+                    </select>
+                </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">Stroke</label>
+                    <select class="form-select" id="disease" name="disease" aria-label="Default select example">
+                        <option selected>-- select stroke Disease --</option>
+                        <option value="">YES</option>
+                        <option value="">NO</option>
+                    </select>
+                </div>
+                       <div class="mb-3">
+                    <label for="" class="form-label">Physical Health</label>
+                    <input type="number" class="form-control" id="physical" name="physical" placeholder="Enter physical health ">
+                </div>
+                    <div class="mb-3">
+                    <label for="" class="form-label">Mental Health</label>
+                    <input type="number" class="form-control" id="mental" name="mental" placeholder="Enter mental health ">
+                </div>
+                 <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">DiffWalking</label>
+                    <select class="form-select" id="diffwalking" name="diffwalking" aria-label="Default select example">
+                        <option selected>-- select diffwalking --</option>
+                        <option value="">YES</option>
+                        <option value="">NO</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">Sex</label>
+                    <select class="form-select" id="gender" name="gender" aria-label="Default select example">
+                        <option selected>-- select gender --</option>
+                        <option value="">Male</option>
+                        <option value="">Female</option>
+                    </select>
+                </div>
+                 <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">AgeCategory</label>
+                    <select class="form-select" id="ageCategory" name="ageCategory" aria-label="Default select example">
+                        <option selected>-- select age --</option>
+                        <option value="">65-69</option>
+                        <option value="">60-64</option>
+                        <option value="">70-74</option>
+                        <option value="">55-59</option>
+                        <option value="">50-54</option>
+                        <option value="">80 or older</option>
+                        <option value="">75-79</option>
+                        <option value="">45-49</option>
+                        <option value="">18-24</option>
+                        <option value="">40-44</option>
+                        <option value="">35-39</option>
+                        <option value="">30-34</option>
+                        <option value="">25-29</option>
+                    </select>
+                    </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">Race</label>
+                    <select class="form-select" id="race" name="race" aria-label="Default select example">
+                        <option selected>-- select race --</option>
+                        <option value="American Indian/Alaskan Native">American Indian/Alaskan Native</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Other">Other</option>
+                        <option value="Black">Black</option>
+                        <option value="Hispanic">Hispanic</option>
+                        <option value="White">White</option>
+                    </select>
+                    </div>
+                 <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">Diabetic</label>
+                    <select class="form-select" id="diabetic" name="diabetic" aria-label="Default select example">
+                        <option selected>-- select diabetic --</option>
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
+                        <option value="No, borderline diabetes">No, borderline diabetes</option>
+                        <option value="Yes (during pregnancy)">Yes (during pregnancy)"</option>
+                    </select>
+                    </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">PhysicalActivity</label>
+                    <select class="form-select" id="physicalActivity" name="physicalActivity" aria-label="Default select example">
+                        <option selected>-- select PhysicalActivity --</option>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">GenHealth</label>
+                    <select class="form-select" id="genHealth" name="genHealth" aria-label="Default select example">
+                        <option selected>-- select race --</option>
+                        <option value="Very good">Very good</option>
+                        <option value="Good">Good</option>
+                        <option value="Excellent">Excellent</option>
+                        <option value="Fair">Fair</option>
+                        <option value="Poor">Poor</option>
+                    </select>
+                    </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">SleepTime</label>
+                    <input type="number" class="form-control" id="sleepTime" name="sleepTime" placeholder="enter the SleepTime">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">Asthma</label>
+                    <select class="form-select" id="asthma" name="asthma" aria-label="Default select example">
+                        <option selected>-- select Asthma --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">KidneyDisease</label>
+                    <select class="form-select" id="kidneyDisease" name="kidneyDisease" aria-label="Default select example">
+                        <option selected>--select --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                   <div class="mb-3">
+                    <label for="exampleInputPassword1"  class="form-label">SkinCancer</label>
+                    <select class="form-select" id="skinCancer" name="skinCancer" aria-label="Default select example">
+                        <option selected>--select --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="text-center"><button type="submit" class="btn btn-primary">Submit</button></div>
+            </form>
+        </div><br><br>
+        <br> <br> <br> <br> </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
